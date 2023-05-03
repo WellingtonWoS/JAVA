@@ -1,0 +1,57 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class C08EX08 {
+    public C08EX08() {
+    }
+
+    public static void main(String[] args) {
+        int[] A = new int[10];
+        Scanner s = new Scanner(System.in);
+        System.out.println();
+
+        int I;
+        for(I = 0; I <= 9; ++I) {
+            System.out.print("Entre o " + (I + 1) + "o. elemento: ");
+            A[I] = s.nextInt();
+        }
+
+        String RESPOSTA;
+        do {
+            System.out.println();
+            System.out.print("Entre o valor a ser pesquisado: ");
+            int PESQUISA = s.nextInt();
+            I = 0;
+            boolean ACHA = false;
+
+            while(I <= 9 & !ACHA) {
+                if (PESQUISA == A[I]) {
+                    ACHA = true;
+                } else {
+                    ++I;
+                }
+            }
+
+            if (ACHA) {
+                System.out.print(PESQUISA + " localizado na posicao " + (I + 1));
+            } else {
+                System.out.print(PESQUISA + " nao foi localizado.");
+            }
+
+            System.out.println();
+            System.out.println();
+            System.out.print("Continua? [S]im / [N]ao + <Enter>. ");
+
+            try {
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                RESPOSTA = br.readLine();
+            } catch (Exception var9) {
+                RESPOSTA = "";
+            }
+
+            RESPOSTA = RESPOSTA.toUpperCase();
+        } while(RESPOSTA.compareTo("S") == 0);
+
+    }
+}
