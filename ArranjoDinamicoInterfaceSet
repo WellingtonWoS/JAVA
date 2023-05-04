@@ -1,0 +1,80 @@
+import java.io.*;
+import java.util.*;
+
+public class ArranjoDinamicoInterfaceSet {
+	
+	public static void main (String args[]) {
+		
+		Set<String> LISTA = new HashSet<>();
+		
+		long T;
+		int I;
+		String N;
+		
+		Scanner s1 = new Scanner(System.in);
+		Scanner s2 = new Scanner(System.in);
+		
+		//Entrada dos nomes na coleção LISTA
+		
+		System.out.println();
+		System.out.print("Quantos nomes a entrar? ");
+		T = s1.nextInt();
+		
+		System.out.println();
+		for(I = 0; I < T; I++) {
+			
+			System.out.printf("Entre o %3do. nome: ", I + 1);
+			N = s2.nextLine();
+			LISTA.add(N);
+			
+		}
+		T = LISTA.size();
+		
+		//Apresentação dos nomes na matriz RELACAO1
+		//após a entrada dos dados na coleção LISTA
+		String RELACAO1[] = (String[]) LISTA.toArray(new String [0]);
+		System.out.println();
+		System.out.printf("Total de %1d elementos.\n\n", T);
+		for(I = 0; I < T; I++) {
+			
+			System.out.printf("%3do. nome = %s\n", I + 1, RELACAO1 [I]);
+			
+		}
+		//Remoção de um item da lista
+		System.out.println();
+		System.out.printf("Qual nome sera removido? ");
+		N = s2.nextLine();
+		LISTA.remove(N);
+		T = LISTA.size();
+		
+		//Apresentação dos nomes na matriz RELACAO2
+		//após a remocao de um dos nomes da colecao LISTA
+		String RELACAO2[] = (String[]) LISTA.toArray(new String [0]);
+		System.out.println();
+		System.out.printf("Total de %1d elementos,\n\n", T);
+		for(I = 0; I < T; I++) {
+			
+			System.out.printf("%3do. nome = %s\n", I + 1, RELACAO2 [I]);
+			
+		}
+		System.out.println();
+		
+		//Remoção de todos os itens da lista
+		T = LISTA.size();
+		
+		//Apresentação dos nomes apos remocao de todos os itens
+		//o conteudo de RELACAO2 nao sera apresentado, pois esta vazia
+		//o laço for não será executado
+		String RELACAO3[] = (String[]) LISTA.toArray(new String [0]);
+		System.out.println();
+		System.out.printf("Total de %1d elementos.\n\n", T);
+		System.out.println();
+		for(I = 0; I < RELACAO3.length; I++) {
+			
+			System.out.printf("%3do. nome = %s\n", I + 1, RELACAO3 [I]);
+			
+		}
+
+		
+	}
+}
