@@ -1,0 +1,83 @@
+import java.io.*;
+import java.util.*;
+
+public class ArranjoDinamicoInterfaceList2 {
+	
+	public static void main(String args[]) {
+		
+		List<String> LISTA = new ArrayList<>();
+		
+		int T, I;
+		String N;
+		
+		Scanner s1 = new Scanner(System.in);
+		Scanner s2 = new Scanner(System.in);
+		
+		//Entrada dos nomes
+		System.out.println();
+		System.out.print("Quantos nomes a entrar? ");
+		T = s1.nextInt();
+		
+		System.out.println();
+		for(I = 0; I < T; I++) {
+			
+		System.out.printf("Entre o %3do. nome: ", I + 1);
+		N = s2.nextLine();
+		LISTA.add(I, N);
+		
+		}
+		//Apresentação dos nomes
+		System.out.println();
+		for(I = 0; I < LISTA.size(); I++) {
+			
+			N = LISTA.get(I);
+			System.out.printf("%3do. nome = %s\n", I + 1, N);
+			
+		}
+		//Alteração de um nome da lista
+		System.out.println();
+		System.out.printf("Entre a posicao a ser substituida ..: ");
+		I = s1.nextInt();
+		System.out.printf("Entre novo nome ...: ");
+		N = s2.nextLine();
+		LISTA.set(I - 1, N);
+		
+		//Apresentação do nome após mudanças
+		System.out.println();
+		for(I = 0; I < LISTA.size(); I++) {
+			
+			N = LISTA.get(I);
+			System.out.printf("%3do. nome = %s\n", I + 1, N);
+			
+		}
+		//Remoção de um item da lista
+		System.out.println();
+		System.out.printf("Entre a posicao a ser removida ....: ");
+		I = s1.nextInt();
+		LISTA.remove(I - 1);
+		
+		//Apresentação dos nomes apos remoção de um item
+		//A lista esta com menos um item
+		System.out.println();
+		for(I = 0; I < LISTA.size(); I++) {
+			
+			N = LISTA.get(I);
+			System.out.printf("%3do. nome = %s\n", I + 1, N);
+			
+		}
+		//Remoção de todos os itens da lista
+		LISTA.clear();
+		//Apresentação dos nomes apos a remoção de todos os itens
+		//A lista nao sera apresenta, pois esta vazia
+		//O laço for não será executado
+		System.out.println();
+		for(I = 0; I < LISTA.size(); I++) {
+			
+			N = LISTA.get(I);
+			System.out.printf("%3do. nome = %s\n", I + 1, N);
+			
+		}
+		
+	}
+
+}
